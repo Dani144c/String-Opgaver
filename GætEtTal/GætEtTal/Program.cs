@@ -12,7 +12,7 @@ namespace GætEtTal
         {
             int gæt;
             int tallet;
-            string prøvigen;
+            string prøvigen; 
             Random rnd = new Random();
             do
             {
