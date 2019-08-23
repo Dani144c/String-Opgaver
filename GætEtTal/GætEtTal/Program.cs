@@ -54,7 +54,7 @@ namespace GætEtTal
 
         }
 
-        private static int TestAfTal()
+        static int TestAfTal()
         {
             bool EtTal = false;
             int Gæt = 0;
