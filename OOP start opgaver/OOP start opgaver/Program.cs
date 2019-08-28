@@ -11,6 +11,7 @@ namespace OOP_start_opgaver
         static void Main(string[] args)
         {
             DateTime Nu = DateTime.Now;
+
             //Opg 3/3b
             Person p1 = new Person()
             {
@@ -42,31 +43,15 @@ namespace OOP_start_opgaver
                 Efternavn = "Sørensen",
                 tlfnr = "45566554"
             };
+
             //Opg 4
             List<Person> PersonListe = new List<Person>();
 
-            p1.IndsætDato(Convert.ToDateTime("20.12.00")); //p1.Alder(Convert.ToDateTime("20.12.00"));
-            p2.IndsætDato(Convert.ToDateTime("04.10.02")); //p2.Alder(Convert.ToDateTime("04.10.02"));
-            p3.IndsætDato(Convert.ToDateTime("23.03.01")); //p3.Alder(Convert.ToDateTime("23.03.01"));
-            p4.IndsætDato(Convert.ToDateTime("01.01.05")); //p4.Alder(Convert.ToDateTime("01.01.05"));
-            p5.IndsætDato(Convert.ToDateTime("10.04.99")); //p5.Alder(Convert.ToDateTime("10.04.99"));
-
-            int ÅrNu = DateTime.Now.Year;
-            int Årp1 = p1.Alder.Year;
-            p1.alder = ÅrNu - Årp1;
-
-            int Årp2 = p2.Alder.Year;
-            p2.alder = ÅrNu - Årp1;
-
-            int Årp3 = p3.Alder.Year;
-            p3.alder = ÅrNu - Årp1;
-
-            int Årp4 = p4.Alder.Year;
-            p4.alder = ÅrNu - Årp1;
-
-            int Årp5 = p5.Alder.Year;
-            p5.alder = ÅrNu - Årp1;
-
+            p1.IndsætDato(Convert.ToDateTime("20.12.00")); 
+            p2.IndsætDato(Convert.ToDateTime("04.10.02")); 
+            p3.IndsætDato(Convert.ToDateTime("23.03.01")); 
+            p4.IndsætDato(Convert.ToDateTime("01.01.05")); 
+            p5.IndsætDato(Convert.ToDateTime("10.04.99")); 
 
             PersonListe.Add(p1);
             PersonListe.Add(p2);
@@ -79,7 +64,10 @@ namespace OOP_start_opgaver
             {
                 Console.Write(person.Fornavn + " ");
                 Console.WriteLine(person.Efternavn);
-                Console.WriteLine("Alder: " + person.alder + "\n");
+                Console.WriteLine("Fødselsår: " + person.Alder() + "\n");
+                person.UdskrivPerson();
+                Console.WriteLine("----------------------");
+                Console.WriteLine();
                 
             }
 
@@ -103,20 +91,30 @@ namespace OOP_start_opgaver
         private DateTime Fødselsdato;
         public int alder;
 
+
         //Opg 5
         public void IndsætDato(DateTime Dag)
         {
             Fødselsdato = Dag;
         }
 
-        public DateTime Alder
+        public int Alder()
         {
-            get { return Fødselsdato;  }
-            set
+            DateTime Nu = DateTime.Now;
+            alder = Fødselsdato.Year;
+            alder = Nu.Year - alder;
+            if ((Fødselsdato.Month > DateTime.Now.Month) || (Fødselsdato.Month == DateTime.Now.Month && Fødselsdato.Day > DateTime.Now.Day))
             {
-                Fødselsdato = value;
-            }
+                alder = alder - 1;
+            }   
+            return alder;
 
+        }
+        public string UdskrivPerson()
+        {
+            string Udskrivning = Fornavn + " " + Efternavn + " er " + alder + " år gammel";
+            Console.WriteLine(Udskrivning);
+            return Udskrivning;
         }
     }
 }

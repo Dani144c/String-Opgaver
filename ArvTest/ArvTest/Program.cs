@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Override
+namespace ArvOverride
 {
     class Program
     {
@@ -26,6 +26,13 @@ namespace Override
 
     class Person
     {
+        private int tæller;
+
+        public int Tæller
+        {
+            get { return this.tæller; }
+            set { this.tæller = value; }
+        }
         public string Fornavn { get; set; }
 
         public string Efternavn { get; set; }
