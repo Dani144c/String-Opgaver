@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.779
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP Operator overload", "OOP Operator overload\OOP Operator overload.csproj", "{A07D8A02-7142-4FB0-81F9-0027E3AB358C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A07D8A02-7142-4FB0-81F9-0027E3AB358C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A07D8A02-7142-4FB0-81F9-0027E3AB358C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A07D8A02-7142-4FB0-81F9-0027E3AB358C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A07D8A02-7142-4FB0-81F9-0027E3AB358C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5870A632-77F9-48D7-97DB-A08E5FFAF6A0}
+	EndGlobalSection
+EndGlobal

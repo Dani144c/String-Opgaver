@@ -70,13 +70,7 @@ namespace OOP_start_opgaver
                 Console.WriteLine();
                 
             }
-
-
-            //int År1 = Fødselsdato.Year;
-            //int ÅrNu = DateTime.Now.Year;
-            //int alder = ÅrNu - År1;
-
-
+            
             Console.ReadKey();
         }
     }
