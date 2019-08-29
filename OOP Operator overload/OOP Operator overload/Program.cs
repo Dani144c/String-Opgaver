@@ -24,12 +24,12 @@ namespace OOP_Operator_overload
             //Udskriver uden ToString metoden
             foreach (var Boxes in boxListe)
             {
-                //Console.WriteLine(Boxes);
                 Console.WriteLine("Højde     : " + Boxes.Højde);
                 Console.WriteLine("Bredde    : " + Boxes.Bredde);
                 Console.WriteLine("Længde    : " + Boxes.Længde);
-                Console.WriteLine("Volume    : " + Boxes.Volume);
-                Console.WriteLine("Størresle : " + Boxes.Størrelse);
+                Console.Write("Volume    : ");
+                Boxes.GetVolume();
+                Console.WriteLine("\nStørresle : " + Boxes.Størrelse);
                 Console.WriteLine("______________________");
                 Console.WriteLine();
             }
@@ -52,13 +52,13 @@ namespace OOP_Operator_overload
         public enum boxType { LilleBox, MellemBox, StorBox}
         public boxType Størrelse { get; set; }
         public double Volume;
-        //public int Vol = Convert.ToInt32(Volume);
 
         public Box()
         {
 
         }
 
+        //Tilføjer alle values
         public Box(double højde, double bredde, double længde, boxType box)
         {
             Højde = højde;
@@ -68,16 +68,20 @@ namespace OOP_Operator_overload
             Volume = højde * bredde * længde;
         }
 
+        //Overrider ToString så man kan udskrive det hele på en gang
         public override string ToString()
         {
             return "Højde     : " + Højde + "\nBredde    : " + Bredde + "\nLængde    : " + Længde + "\nStørrelse : " + Størrelse + "\nVolume    : " + Volume +"\n\n";
         }
 
+        //beregner Volume
         public void GetVolume()
         {
             double volume = Højde * Bredde * Længde;
+            Console.Write(volume);
         }
 
+        //Beregner når 2 boxes bliver sat sammen
         public static Box operator +(Box b1, Box b2)
         {
             Box nyBox = new Box();
@@ -96,6 +100,7 @@ namespace OOP_Operator_overload
             return nyBox;
         }
 
+        //Sorterer instancerne i listen
         public int CompareTo(Box obj)
         {
             if (this.Volume < obj.Volume)
