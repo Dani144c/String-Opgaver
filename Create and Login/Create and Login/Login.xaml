@@ -1,0 +1,77 @@
+﻿<Window x:Class="Create_and_Login.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Create_and_Login"
+        mc:Ignorable="d"
+        Title="Login" Height="250" Width="400"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Icon="C:\Users\dana\source\repos\Create and Login\Create and Login\bin\Debug\Troll Face.ico"
+        WindowStyle="None"
+        BorderBrush="Black"
+        BorderThickness="0"
+        AllowsTransparency="True"
+        KeyUp="Exit" 
+        Background="Transparent" MouseLeftButtonDown="WindowMouseLeftButtonDown">
+    <Border CornerRadius="30" Background="#2E2E2E" BorderThickness="5">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="20" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="20" />
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="LOG IN" FontSize="30" Margin="0, 0, 0, 15"
+                       Grid.ColumnSpan="2" HorizontalAlignment="Center" Style="{StaticResource Header}"/>
+        
+            <TextBlock Grid.Column="1" Grid.Row="2" Style="{StaticResource CreateTextBlock}"
+                       Text="Username" FontSize="24"/>
+
+            <ComboBox Margin="20,10,20,15" Name="ComboBox1"  Grid.Column="2" Grid.Row="2"
+                      KeyUp="StackPanel_PreviewKeyDown" Width="150"/>
+
+
+            <TextBlock Grid.Column="1" Grid.Row="4" Style="{StaticResource CreateTextBlock}"
+                       Text="Password" FontSize="24"/>
+
+            <PasswordBox x:Name="PasswordText" Grid.Column="2" Grid.Row="4" 
+                         Width="150" Margin="20, 10, 20, 0" Style="{StaticResource NormalPassword}"
+                         KeyUp="Grid_KeyUp">
+            </PasswordBox>
+
+            <Button x:Name="LoginButton" Content="Log In" Grid.Column="1"
+                    Grid.Row="5" Margin="45, 25, 0, 50" Width="100" Height="30"
+                    Style="{StaticResource HighlightedButton}"
+                    Click="Login_Click"/>
+
+            <Button x:Name="Back" Content="Back" Grid.Column="2"
+                    Grid.Row="5" Margin="45, 25, 0, 50" Width="100" Height="30"
+                    Style="{StaticResource NormalButton}"
+                    Click="Back_Click"/>
+
+            <Button Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="4" Grid.RowSpan="2" Width="35" 
+                    HorizontalAlignment="Right" Height="35" VerticalAlignment="Top"
+                    Content="X" Click="Exit_Click" Background="DarkRed">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="0,25,0,5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+    </Border>
+</Window>
