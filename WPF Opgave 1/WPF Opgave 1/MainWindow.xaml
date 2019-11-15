@@ -1,0 +1,44 @@
+﻿<Window x:Class="WPF_Opgave_1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Opgave_1"
+        mc:Ignorable="d" FontSize="18" FontFamily="Segoe UI Light"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid Margin="-7,0,7,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="1" Grid.Row="1" FontSize="36" 
+                   Grid.ColumnSpan="3" Margin="0,0,0,10" >
+            WPF Super Demo
+        </TextBlock>
+
+        <TextBlock Grid.Column="1" Grid.Row="2" FontWeight="SemiBold"
+                   Text="First Name" FontFamily="SegoeUI" />
+        
+        <TextBox x:Name="firstNameText" Grid.Column="2" Grid.Row="2" 
+                 Width="150"/>
+
+        <Button x:Name="submitButton" Content="Submit" Grid.Column="1"
+                Grid.Row="3" Grid.ColumnSpan="2" Margin="10" Click="submitButton_Click" />
+    </Grid>
+</Window>
